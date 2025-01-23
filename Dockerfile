@@ -44,10 +44,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pipx packages
-RUN pipx install -q notebook jupyterlab
-
-# Install pip packages
-RUN pip3 install apache-airflow
+RUN pipx install -q notebook jupyterlab apache-airflow
 
 # Enables Docker starting with systemd
 RUN systemctl enable docker
