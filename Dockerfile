@@ -16,13 +16,7 @@ COPY docker.list /etc/apt/sources.list.d/docker.list
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends --no-install-suggests \
     bash \
-    build-essential \
-    containerd.io \
     curl \
-    docker-ce \
-    docker-ce-cli \
-    docker-buildx-plugin \
-    docker-compose-plugin \
     htop \
     jq \
     locales \
@@ -32,8 +26,6 @@ RUN apt-get update && \
     python3-pip \
     software-properties-common \
     sudo \
-    systemd \
-    systemd-sysv \
     unzip \
     vim \
     wget \
@@ -45,12 +37,6 @@ RUN apt-get update && \
 
 # Install pipx packages
 RUN pipx install -q notebook jupyterlab apache-airflow
-
-# Enables Docker starting with systemd
-RUN systemctl enable docker
-
-# Create a symlink for standalone docker-compose usage
-RUN ln -s /usr/libexec/docker/cli-plugins/docker-compose /usr/bin/docker-compose
 
 # Generate the desired locale (en_US.UTF-8)
 RUN locale-gen en_US.UTF-8
