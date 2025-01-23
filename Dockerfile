@@ -16,7 +16,13 @@ COPY docker.list /etc/apt/sources.list.d/docker.list
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends --no-install-suggests \
     bash \
+    build-essential \
+    containerd.io \
     curl \
+    docker-ce \
+    docker-ce-cli \
+    docker-buildx-plugin \
+    docker-compose-plugin \
     htop \
     jq \
     locales \
@@ -26,6 +32,8 @@ RUN apt-get update && \
     python3-pip \
     software-properties-common \
     sudo \
+    systemd \
+    systemd-sysv \
     unzip \
     vim \
     wget \
