@@ -79,21 +79,21 @@ RUN mkdir -p ~/.cache/code-server \
 #     && sudo ln -fs /tmp/code-server/lib/code-server-4.96.2/bin/code-server /usr/bin/code-server
 
 # pre-install extensions on code-server
-RUN /usr/bin/code-server --install-extension codeium.codeium-enterprise-updater \
-    && /usr/bin/code-server --install-extension codeium.codeium \
-    && /usr/bin/code-server --install-extension codezombiech.gitignore \
-    && /usr/bin/code-server --install-extension dbaeumer.vscode-eslint \
-    && /usr/bin/code-server --install-extension eamodio.gitlens \
-    && /usr/bin/code-server --install-extension esbenp.prettier-vscode \
-    && /usr/bin/code-server --install-extension formulahendry.auto-close-tag \
-    && /usr/bin/code-server --install-extension formulahendry.auto-rename-tag \
-    && /usr/bin/code-server --install-extension ms-azuretools.vscode-docker \
-    && /usr/bin/code-server --install-extension ms-python.python \
-    && /usr/bin/code-server --install-extension ms-vscode.vscode-typescript-tslint-plugin \
-    && /usr/bin/code-server --install-extension redhat.vscode-yaml \
-    && /usr/bin/code-server --install-extension vscode-icons-team.vscode-icons \
-    && /usr/bin/code-server --install-extension waderyan.gitblame \
-    && /usr/bin/code-server --install-extension yzhang.markdown-all-in-one
+# RUN /usr/bin/code-server --install-extension codeium.codeium-enterprise-updater \
+#     && /usr/bin/code-server --install-extension codeium.codeium \
+#     && /usr/bin/code-server --install-extension codezombiech.gitignore \
+#     && /usr/bin/code-server --install-extension dbaeumer.vscode-eslint \
+#     && /usr/bin/code-server --install-extension eamodio.gitlens \
+#     && /usr/bin/code-server --install-extension esbenp.prettier-vscode \
+#     && /usr/bin/code-server --install-extension formulahendry.auto-close-tag \
+#     && /usr/bin/code-server --install-extension formulahendry.auto-rename-tag \
+#     && /usr/bin/code-server --install-extension ms-azuretools.vscode-docker \
+#     && /usr/bin/code-server --install-extension ms-python.python \
+#     && /usr/bin/code-server --install-extension ms-vscode.vscode-typescript-tslint-plugin \
+#     && /usr/bin/code-server --install-extension redhat.vscode-yaml \
+#     && /usr/bin/code-server --install-extension vscode-icons-team.vscode-icons \
+#     && /usr/bin/code-server --install-extension waderyan.gitblame \
+#     && /usr/bin/code-server --install-extension yzhang.markdown-all-in-one
 
 USER coder
 # adds user's bin directory to PATH
