@@ -44,7 +44,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pipx packages
-RUN pipx install -q notebook jupyterlab apache-airflow
+RUN pipx install -q notebook jupyterlab
 
 # Generate the desired locale (en_US.UTF-8)
 RUN locale-gen en_US.UTF-8
