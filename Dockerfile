@@ -97,4 +97,4 @@ RUN mkdir -p ~/.cache/code-server \
 
 USER coder
 # adds user's bin directory to PATH
-RUN pipx ensurepath 
+# RUN pipx ensurepath 
