@@ -41,7 +41,7 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pipx packages
-RUN pipx install -q notebook jupyterlab
+# RUN pipx install -q notebook jupyterlab
 
 RUN mkdir -p ~/.cache/code-server \
     && curl -#fL -o ~/.cache/code-server/code-server_4.96.2_amd64.deb.incomplete -C - https://github.com/coder/code-server/releases/download/v4.96.2/code-server_4.96.2_amd64.deb \
