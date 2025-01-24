@@ -41,6 +41,8 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pipx packages
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir notebook jupyterlab
 # RUN pipx install -q notebook jupyterlab
 
 RUN mkdir -p ~/.cache/code-server \
