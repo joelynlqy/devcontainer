@@ -1,7 +1,8 @@
-FROM ubuntu:noble
+FROM public.ecr.aws/ubuntu/ubuntu:noble
 
 USER root
 ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     bash \
@@ -11,7 +12,13 @@ RUN apt-get update && \
     jq \
     locales \
     sudo \
+    pipx \
     && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p ~/.cache/code-server \
+    && curl -#fL -o ~/.cache/code-server/code-server_4.96.2_amd64.deb.incomplete -C - https://github.com/coder/code-server/releases/download/v4.96.2/code-server_4.96.2_amd64.deb \
+    && mv ~/.cache/code-server/code-server_4.96.2_amd64.deb.incomplete ~/.cache/code-server/code-server_4.96.2_amd64.deb \
+    && sudo dpkg -i ~/.cache/code-server/code-server_4.96.2_amd64.deb
 
 # Generate the desired locale (en_US.UTF-8)
 RUN locale-gen en_US.UTF-8
