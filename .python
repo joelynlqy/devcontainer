@@ -1,0 +1,12 @@
+FROM public.ecr.aws/ubuntu/ubuntu:noble
+
+RUN apt-get update && \
+    apt-get install --yes --no-install-recommends --no-install-suggests pipx
+
+RUN useradd -m -s /bin/bash -G sudo coder
+
+USER coder
+
+# Install pipx packages
+RUN pipx install -q notebook jupyterlab
+RUN pipx ensurepath
