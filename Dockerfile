@@ -40,5 +40,6 @@ RUN userdel -r ubuntu && \
 USER coder
 
 # Install pipx packages
-RUN pipx install -q notebook jupyterlab
 RUN pipx ensurepath
+RUN pipx install -q notebook jupyterlab
+
