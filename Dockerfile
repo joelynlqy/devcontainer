@@ -40,9 +40,7 @@ RUN apt-get update && \
     apt-get install --yes git \
     && rm -rf /var/lib/apt/lists/*
 
-# Install pipx packages
-# RUN pipx ensurepath
-# RUN pipx install -q notebook jupyterlab
+
 
 RUN mkdir -p ~/.cache/code-server \
     && curl -#fL -o ~/.cache/code-server/code-server_4.96.2_amd64.deb.incomplete -C - https://github.com/coder/code-server/releases/download/v4.96.2/code-server_4.96.2_amd64.deb \
@@ -51,3 +49,6 @@ RUN mkdir -p ~/.cache/code-server \
 
 RUN useradd -m -s /bin/bash -G sudo coder
 USER coder
+# Install pipx packages
+RUN pipx install -q notebook jupyterlab
+RUN pipx ensurepath
